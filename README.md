@@ -3,6 +3,22 @@
 ## Architectural Intent
 This archive treats personal experience and technical analysis as a single maturation pipeline. The core principle is that data is not split by genre, but by **Maturation Stage**. The goal is to transform raw inputs into a queryable, formalized knowledge base.
 
+## Data Ingestion (NotebookLM)
+To pull data from NotebookLM into the archive:
+
+### Option A: Clipboard Ingestion (Recommended)
+1.  **Copy Content**: Select text in NotebookLM and copy it (`Ctrl+C` / `Cmd+C`).
+2.  **Ingest**: In the Archive Dashboard, click **"Ingest from Clipboard"** (under Utilities).
+3.  **Verify**: The text is automatically saved as a timestamped markdown file in `notebooklm-import-raw/`.
+
+### Option B: Manual Staging
+1.  **Export Content**: Copy your notes or source text.
+2.  **Create Markdown**: Paste the text into a new file with a `.md` extension.
+3.  **Stage File**: Save this file into the `notebooklm-import-raw/` directory.
+
+### Processing
+Once staged, run the **"1. Initialize & Scan"** command in the toolkit to detect and classify the new data.
+
 ## Directory Structure
 The archive follows a `Pattern-Domain > Maturation-Stage` hierarchy:
 

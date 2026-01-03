@@ -11,6 +11,7 @@ import re
 TOOLKIT_SCRIPT = "ARCHIVE-TOOLKIT.py"
 CLEANUP_SCRIPT = "ARCHIVE-CLEANUP.py"
 EXPORT_SCRIPT = "ARCHIVE-EXPORT.py"
+INGEST_SCRIPT = "ARCHIVE-INGEST.py"
 MANIFEST_FILE = "classification-manifest.csv"
 
 class ArchiveDashboard:
@@ -49,6 +50,11 @@ class ArchiveDashboard:
         self.tabs.add(self.search_tab, text="Search Archive")
         self.setup_search_tab()
 
+        # Help Tab
+        self.help_tab = ttk.Frame(self.tabs, padding=10)
+        self.tabs.add(self.help_tab, text="Help / Directive")
+        self.setup_help_tab()
+
         # Status Bar
         self.status_var = tk.StringVar(value="System Ready")
         self.status_bar = ttk.Label(self.main_frame, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W, padding=5)
@@ -78,6 +84,7 @@ class ArchiveDashboard:
         self.utils_frame.pack(fill=tk.X, pady=(0, 15))
         
         ttk.Button(self.utils_frame, text="Open Manifest (CSV)", command=self.open_manifest).pack(fill=tk.X, pady=2)
+        ttk.Button(self.utils_frame, text="Ingest from Clipboard", command=lambda: self.run_script(INGEST_SCRIPT)).pack(fill=tk.X, pady=2)
         ttk.Button(self.utils_frame, text="Backup Archive (JSON)", command=lambda: self.run_script(EXPORT_SCRIPT)).pack(fill=tk.X, pady=2)
         ttk.Button(self.utils_frame, text="Cleanup Staging", command=self.confirm_cleanup).pack(fill=tk.X, pady=2)
 
@@ -261,6 +268,25 @@ class ArchiveDashboard:
             os.startfile(file_path)
         except Exception as e:
             messagebox.showerror("Error", f"Could not open file: {e}")
+
+    def setup_help_tab(self):
+        self.help_text = scrolledtext.ScrolledText(self.help_tab, state='disabled', font=("Consolas", 10), padx=10, pady=10)
+        self.help_text.pack(fill=tk.BOTH, expand=True)
+        self.load_readme()
+
+    def load_readme(self):
+        readme_path = Path("README.md")
+        content = "README.md not found."
+        if readme_path.exists():
+            try:
+                with open(readme_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            except Exception as e:
+                content = f"Error loading README: {e}"
+        self.help_text.config(state='normal')
+        self.help_text.delete(1.0, tk.END)
+        self.help_text.insert(tk.END, content)
+        self.help_text.config(state='disabled')
 
 if __name__ == "__main__":
     root = tk.Tk()
