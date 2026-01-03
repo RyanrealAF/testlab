@@ -1,0 +1,2 @@
+﻿sourcefilename,destination_relpath,destination_filename,patterndomain,maturationstage,patterntags,validationstatus,instructionalreadiness,experiencedate,analysisdate,provenance,relationshipreferences,source,importdate
+note_raw_01.md,interpersonalmanipulationtactics/analyticalsynthesis/,interpersonal-breadcrumb-analysis-2024.md,interpersonalmanipulationtactics,analyticalsynthesis,"[breadcrumb_web, gaslighting]",multiinstanceconfirmation,synthesisinprogress,2023-08-15,2024-11-20,personaldocumentation,"[r01]",notebooklm,2026-01-02

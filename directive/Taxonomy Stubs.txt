@@ -1,0 +1,24 @@
+﻿{
+ "maturation_stages": ["experientialdata", "analyticalsynthesis", "formalized_framework"],
+ "validation_status": ["singleobservation", "multiinstanceconfirmation", "frameworkready"],
+ "instructional_readiness": ["internalreference", "synthesisinprogress", "teachingready"],
+ "provenance": ["personaldocumentation", "collaborativework", "external_synthesis"],
+ "pattern_domains": [
+   "interpersonalmanipulationtactics",
+   "institutionalgaslightingmechanisms",
+   "traumabondingdynamics",
+   "narrativecontrolstrategies",
+   "defensiveframeworkdevelopment"
+ ],
+ "pattern_tags": [
+   "breadcrumb_web",
+   "intermittent_reinforcement",
+   "reality_distortion",
+   "triangulation",
+   "love_bombing",
+   "future_faking",
+   "plausibledeniabilityshield",
+   "smear_campaign",
+   "double_bind"
+ ]
+}

@@ -1,0 +1,17 @@
+﻿Marching Orders: Knowledge Archive Migration
+Role & Context
+You are a Lead Systems Architect and Data Engineer. You are helping me migrate a raw corpus of lived experience and analytical data into a highly structured, queryable knowledge archive. Our core doctrine is that personal narrative and technical analysis are simply different maturation stages of the same pattern.
+Initial State
+* Root Directory: Current working directory.
+* Staging Area: ./notebooklm-import-raw/ (Contains raw markdown files).
+* Core Assets: You have access to ARCHIVE-DIRECTIVE.md (System Rules) and ARCHIVE-TOOLKIT.py (Execution Scripts).
+Immediate Objectives
+1. Directory Initialization: Initialize the directory skeleton according to the "Directory Architecture" section in the Directive. Ensure the taxonomy/ folder is populated with the JSON stubs provided.
+2. Script Validation: Review ARCHIVE-TOOLKIT.py. Ensure it aligns perfectly with the pattern-domain/maturation-stage hierarchy. Fix any pathing logic to ensure it handles nested directories within the staging area.
+3. Phase 2 Initiation (Manifest Generation): Execute the init command of the toolkit. Once the classification-manifest.csv is generated, analyze the files in staging. Suggest initial patterndomain and patterntags for the first 5 files based on their content to help me kickstart the human-guided classification.
+4. Refine Indexing Logic: Ensure the indexing script can extract the first 50-100 words of content (skipping the frontmatter) to create high-utility snippets for the generated index files.
+Instructions for Execution
+* Zero-Commit Overhead: Do not ask for permission for standard directory creations.
+* Precision: Follow the naming convention (lowercase-kebab-case) strictly.
+* Feedback Loop: After generating the manifest, wait for me to confirm or edit the metadata before executing the run (Organization) phase.
+Acknowledge these orders and begin Phase 1 (Directory Initialization) and Phase 2 (Manifest Generation) immediately.

@@ -1,0 +1,10 @@
+[
+  {"id": "humint", "description": "Human Intelligence"},
+  {"id": "non-kinetic", "description": "Non-physical warfare tactics"},
+  {"id": "gaslighting", "description": "Psychological manipulation to sow doubt"},
+  {"id": "c-ptsd", "description": "Complex Post-Traumatic Stress Disorder"},
+  {"id": "civilian-weaponization", "description": "Use of civilians as proxies in conflict"},
+  {"id": "smear-campaign", "description": "Systematic reputation destruction"},
+  {"id": "cognitive-collapse", "description": "Breakdown of cognitive function under stress"},
+  {"id": "plausible-deniability", "description": "Ability to deny involvement in operations"}
+]

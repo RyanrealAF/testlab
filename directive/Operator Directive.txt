@@ -1,0 +1,30 @@
+﻿Knowledge Archive Migration Directive
+1. Architectural Intent
+This archive treats personal experience and technical analysis as a single maturation pipeline.
+* Core Principle: Data is not split by genre, but by "Maturation Stage."
+* Goal: Transform raw NotebookLM exports into a queryable, formalized knowledge base.
+2. Structural Specification
+The archive-root follows a Pattern-Domain > Maturation-Stage hierarchy.
+* [pattern-domain]/experiential_data/: Raw accounts, high texture.
+* [pattern-domain]/analytical_synthesis/: Pattern articulation, partial theory.
+* [pattern-domain]/formalized_frameworks/: Refined, minimal narrative, teaching-ready.
+3. Metadata Schema (Required YAML)
+Every document must contain:
+* patterndomain: (Matches top-level directory)
+* maturationstage: (experientialdata | analyticalsynthesis | formalizedframework)
+* patterntags: array of tags from taxonomy/pattern_tags.json
+* validationstatus: (singleobservation | multiinstanceconfirmation | framework_ready)
+* instructionalreadiness: (internalreference | synthesisinprogress | teaching_ready)
+* temporal_context: { experience_date: ISO-8601, analysis_date: ISO-8601 }
+* provenance: (personaldocumentation | collaborativework | external_synthesis)
+* source: "notebooklm"
+* import_date: ISO-8601
+4. Processing Pipeline
+1. Staging: All raw files in notebooklm-import-raw/.
+2. Classification: Generate classification-manifest.csv. User populates metadata.
+3. Execution: Script reads manifest, injects YAML frontmatter, creates directories, and moves files.
+4. Indexing: Script generates markdown files in _indexes/ based on metadata.
+5. Quality Control
+* No PII in filenames.
+* Filenames: domain-prefix-slug-date.md (lowercase-kebab-case).
+* Automated validation of controlled vocabulary against taxonomy/*.json.
